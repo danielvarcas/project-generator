@@ -5,12 +5,15 @@ const generateProject = (name, cb) => {
     if (err) cb(err)
     else {
       projectName = name;
-      cb(null, projectName);
+      fs.writeFile(`./${name}/index.js`, 'testing 123...', (err) => {
+        if (err) cb(err)
+        else cb(null, projectName);
+      })
     }
   });
 };
 
-generateProject('project', (err, projectName) => {
+generateProject('project2', (err, projectName) => {
   console.log(projectName);
 });
 
