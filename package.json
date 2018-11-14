@@ -1,0 +1,25 @@
+{
+  "name": "project-generator",
+  "version": "1.0.0",
+  "description": "a javascript project directory generator",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danielvarcas/project-generator.git"
+  },
+  "keywords": [
+    "javascript",
+    "project",
+    "directory",
+    "generator"
+  ],
+  "author": "Daniel Varcas and Charlie Wild",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/danielvarcas/project-generator/issues"
+  },
+  "homepage": "https://github.com/danielvarcas/project-generator#readme"
+}
