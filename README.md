@@ -1,0 +1,1 @@
+This will eventually generate a simple JavaScript project directory by typing `generate my_new_project` in the terminal.
