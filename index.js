@@ -9,9 +9,19 @@ const generateProject = (name, cb) => {
       fs.writeFile(`${currentPath}/index.js`, 'testing 123...', (err) => {
         if (err) cb(err)
         else {
-          fs.mkdir(`${currentPath}/spec`, (err) => {
-            if (err) cb(err);
-            else cb(null, projectName);
+          fs.writeFile(`${currentPath}/README.md`, 'this is your README file', (err) => {
+            if (err) cb(err)
+            else {
+              fs.mkdir(`${currentPath}/spec`, (err) => {
+                if (err) cb(err);
+                else {
+                  fs.writeFile(`${currentPath}/spec/index.spec.js`, 'tests go here', (err) => {
+                    if (err) cb(err);
+                    else cb(null, projectName);
+                  })
+                }
+              })
+            }  
           })
         }
       })
