@@ -1,19 +1,21 @@
 const fs = require('fs');
 
 const generateProject = (name, cb) => {
-  fs.mkdir(`./${name}`, (err) => {
+  let currentPath = `./${name}`;
+  fs.mkdir(currentPath, (err) => {
     if (err) cb(err)
     else {
       projectName = name;
-      fs.writeFile(`./${name}/index.js`, 'testing 123...', (err) => {
+      currentPath = currentPath + `/index.js`
+      fs.writeFile(currentPath, 'testing 123...', (err) => {
         if (err) cb(err)
         else cb(null, projectName);
-      })
+        })
     }
   });
 };
 
-generateProject('project2', (err, projectName) => {
+generateProject('my-new-project', (err, projectName) => {
   console.log(projectName);
 });
 
