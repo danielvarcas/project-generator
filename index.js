@@ -6,11 +6,15 @@ const generateProject = (name, cb) => {
     if (err) cb(err)
     else {
       projectName = name;
-      currentPath = currentPath + `/index.js`
-      fs.writeFile(currentPath, 'testing 123...', (err) => {
+      fs.writeFile(`${currentPath}/index.js`, 'testing 123...', (err) => {
         if (err) cb(err)
-        else cb(null, projectName);
-        })
+        else {
+          fs.mkdir(`${currentPath}/spec`, (err) => {
+            if (err) cb(err);
+            else cb(null, projectName);
+          })
+        }
+      })
     }
   });
 };
